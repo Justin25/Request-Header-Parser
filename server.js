@@ -19,7 +19,7 @@ app.get('/who', function(req,res,next){
     var osVersion = os.release();
     var myOs = osType + " " + osVersion;
     var ip = require('ip');
-    var myIp = ip.address();
+    var myIp = request.connection.remoteAddress;
     var myLang = req.locale;
     res.json({IP: myIp, language: myLang, OS: myOs});
 });
